@@ -46,7 +46,7 @@ func main() {
     )
     //cmd = exec.Command("telnet", "www.google.com", "80")
     //cmd = exec.Command("ls")
-    cmd = exec.Command("nmap -A scanme.nmap.org")
+    cmd = exec.Command("bash", "-c", "nmap -A scanme.nmap.org -oX scanme.nmap.org")
     //cmd.Env = os.Environ()
     cmd.Stdout = &out
     if err := cmd.Run(); err != nil {
